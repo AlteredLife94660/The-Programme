@@ -1,23 +1,55 @@
-# Base Algorithms
+# Base Algorithms — Implementation
 
-## Purpose
+The algorithm documents in this directory are currently conceptual specifications. The implementation in this repository will be ordinary, auditable decision-support code: it may evaluate data, classify options, or produce recommendations, but it must not exercise authority over people or institutions.
 
-This directory sketches **initial, human-reviewed decision-support procedures** inspired by `Sources/`, constrained by `Foundations/`, and written for the early conceptual stage of The Programme. These are not deployed software, validated policy, or autonomous governance. They do not authorize an AI to act on people, allocate coercive power, or make final decisions affecting rights or essential services.
+## Language
 
-## Start here
+Python 3.11 or newer.
 
-1. [Scope and shared safeguards](00-scope-and-safeguards.md)
-2. [Principle and proposal review](01-principle-review.md)
-3. [Harm and fairness assessment](02-harm-and-fairness-review.md)
-4. [Needs and resource support](03-needs-support.md)
-5. [Contribution recognition](04-contribution-recognition.md)
-6. [Power concentration review](05-power-review.md)
-7. [Justice, prevention, and repair](06-prevention-and-repair.md)
-8. [Independent multi-agent audit](07-independent-audit.md)
-9. [Three-pass alignment review](08-alignment-review.md)
+## Scope
 
-## Important interpretation
+The implementation deliberately separates measurement from action:
 
-Each procedure may identify questions, summarize evidence, or propose options for accountable people. A low confidence, rights conflict, missing evidence, serious potential harm, or unrepresented affected group must lead to **pause and human review**, not an automated guess. Never use these procedures to rank human worth, infer guilt from risk, punish dissent, deny basic needs, or bypass law, due process, consent, and independent oversight.
+- Harm and fairness review produces evidence records and uncertainty.
+- Needs support produces voluntary options and never determines worth or entitlement.
+- Contribution recognition produces a temporary, scoped description and is never used for rights or essentials.
+- Power review produces evidence for independent human review, not enforcement.
+- Prevention and repair proposes least-restrictive options, never guilt or coercive disposition.
+- An independent audit validator checks whether a proposal has the minimum governance safeguards.
+- The multi-algorithm coordinator may combine independent analyses only for review and cannot issue authority-bearing decisions.
 
-The review file records three explicit conceptual rechecks per algorithm, with YES/NO answers to the requested alignment questions. These are reasoned design judgments, not empirical validation or proof that real-world deployment would improve humanity.
+Every public function validates its inputs, preserves unknown values instead of guessing, and returns an auditable result record. The module uses only the Python standard library so it can be reviewed, tested, and run without external services.
+
+## Not included
+
+No person-risk model, guilt classifier, coercive disposition, surveillance system, citizen score, forced redistribution mechanism, social-credit ranking, or content-suppression feature is implemented. No training dataset, model weights, biometric collection, or automatic eligibility decision is included.
+
+## Status
+
+These are research-grade Python modules. They do not confer legal authority and are not production-ready for decisions affecting rights or basic needs. Real deployment requires legitimate human governance, independent impact assessment, affected-community participation, security/privacy controls, audit, appeal, and applicable law.
+
+## Files
+
+- `models.py`: bounded data structures and evidence record types.
+- `evidence.py`: evidence-quality and uncertainty helpers.
+- `harm_fairness.py`: harm and distribution assessment.
+- `needs_support.py`: voluntary needs-support option review.
+- `contribution.py`: scoped, temporary contribution recognition.
+- `power.py`: power-concentration review for human institutions.
+- `prevention_repair.py`: rights-preserving prevention/support/repair options.
+- `audit.py`: independent-governance and deployment gate.
+- `coordinator.py`: combines analyses while preserving stop conditions and human fallback.
+- `cli.py`: demonstration interface.
+- `tests/test_base_algorithms.py`: unit tests for boundaries and core behavior.
+
+Run the demonstration with:
+
+```bash
+python3 Base-Algorithms/cli.py
+```
+
+Run tests with:
+
+```bash
+python3 -m unittest discover -s Base-Algorithms/tests -v
+```
