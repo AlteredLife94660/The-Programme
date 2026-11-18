@@ -1,0 +1,239 @@
+
+
+
+	
+	
+	
+	pre { background: transparent }pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h3.western { font-weight: bold; font-size: 14pt; font-family: "Liberation Serif", serif }h3.cjk { font-weight: bold; font-size: 14pt; font-family: "Noto Serif CJK SC" }h3.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 14pt }th p { orphans: 0; text-align: center; widows: 0; font-weight: bold; background: transparent }td p { widows: 0; orphans: 0; background: transparent }blockquote { margin-right: 1cm; margin-left: 1cm; background: transparent }h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h2.western { font-weight: bold; font-size: 18pt; font-family: "Liberation Serif", serif }h2.cjk { font-weight: bold; font-size: 18pt; font-family: "Noto Serif CJK SC" }h2.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 18pt }h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h1.western { font-weight: bold; font-size: 24pt; font-family: "Liberation Serif", serif }h1.cjk { font-weight: bold; font-size: 24pt; font-family: "Noto Serif CJK SC" }h1.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 24pt }p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }code.western { font-family: "Liberation Mono", monospace }code.cjk { font-family: "Noto Sans Mono CJK SC", monospace }code.ctl { font-family: "Liberation Mono", monospace }strong { font-weight: bold }
+
+
+
+5. POWER DECAY — FORMAL DEFINITION
+
+
+Core Principle
+
+
+Any accumulated influence, wealth, or authority
+must gradually decay to prevent concentration and systemic
+unfairness, while maintaining stability.
+
+
+Key points:
+
+
+Applies to all entities: humans,
+	organizations, algorithms
+Linear or exponential decay is possible
+Can be mitigated only by ongoing contribution
+	or systemic need
+Preserves survival and sufficiency, only surplus decays
+
+
+
+
+1. WHAT COUNTS AS POWER
+
+
+We define three primary dimensions:
+
+
+	
+	
+	
+		
+			Dimension
+
+			
+			Definition
+
+			
+		
+	
+	
+		
+			Wealth
+				(W)
+
+			
+			Resources
+				above sufficiency (money, material goods)
+
+			
+		
+		
+			Influence
+				(I)
+
+			
+			Ability to
+				affect systemic outcomes (decisions, votes, social leverage)
+
+			
+		
+		
+			Authority
+				(A)
+
+			
+			Algorithmic
+				or institutional decision-making power
+
+			
+		
+	
+
+
+
+
+2. DECAY FUNCTION
+
+
+Exponential decay
+
+
+P(t+1) = P(t) * (1 - decay_rate)
+
+
+decay_rate ∈ [0.01, 0.05] per
+	cycle (tunable)
+Ensures high power naturally reduces without intervention
+
+
+Linear decay (optional)
+
+
+P(t+1) = max(P(t) - decay_amount, 0)
+
+
+Useful if incremental, predictable reductions are preferred
+
+
+
+
+3. CONTRIBUTION OFFSET
+
+
+Power decay can be mitigated temporarily by
+beneficial activity:
+
+
+P(t+1) = P(t) * (1 - decay_rate) + ContributionBoost
+
+
+ContributionBoost derived from
+	Contribution Index (CI)
+Only mitigates decay, cannot exceed sufficiency constraints
+Prevents long-term accumulation while rewarding active
+	participation
+
+
+
+
+4. RESOURCE-BASED WEALTH DECAY
+
+
+Wealth above sufficiency triggers automatic
+redistribution:
+
+
+Surplus = max(0, resources[r] - sufficiency[r])
+DecayAmount = Surplus * decay_rate
+
+
+Decayed resources feed system deficit or basic income
+	pool
+Ensures zero net harm due to hoarding
+
+
+
+
+5. INFLUENCE AND AUTHORITY DECAY
+
+
+Influence and authority follow similar decay rules:
+
+
+Influence tied to CI and power above sufficiency
+Algorithmic authority decays if:
+
+	
+Outcomes concentrate harm
+Overrule thresholds exceed fairness bounds
+
+	
+Decay ensures all actors are accountable,
+	even algorithms
+
+
+
+
+6. CODE — POWER DECAY MODULE
+
+
+@dataclass
+class Power:
+    wealth: float
+    influence: float
+    authority: float
+    decay_rate: float = 0.02  # 2% per cycle
+
+def apply_decay(power: Power, contribution_boost: float = 0.0):
+    power.wealth *= (1 - power.decay_rate)
+    power.influence *= (1 - power.decay_rate)
+    power.authority *= (1 - power.decay_rate)
+    
+    # Mitigate decay with contribution
+    power.wealth += contribution_boost * 0.5  # partial offset
+    power.influence += contribution_boost * 0.3
+    power.authority += contribution_boost * 0.2
+
+    # Enforce non-negative
+    power.wealth = max(0, power.wealth)
+    power.influence = max(0, power.influence)
+    power.authority = max(0, power.authority)
+
+
+
+
+7. SYSTEMIC INTEGRATION
+
+
+Loop per time cycle:
+
+
+Update CI based on actions
+Update expected harm & justice interventions
+Apply power decay to all entities and algorithms
+Redistribute decayed surplus to deficits or basic income pool
+Recalculate resource sufficiency and fairness metrics
+
+
+This creates a self-correcting ecosystem:
+
+
+Contribution is rewarded temporarily
+Harm and hoarding are continuously suppressed
+Stability is preserved
+No permanent elites
+
+
+
+
+8. EDGE CASES
+
+
+Sudden large contributions → temporary
+	surge, decays naturally
+Inactive entities → influence &
+	surplus decay to sufficiency floor
+Algorithms misbehaving → authority decays
+	automatically, eventually deprecating them
+
+
+
+
+
+
+
+
