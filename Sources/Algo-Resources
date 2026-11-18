@@ -1,0 +1,379 @@
+
+
+
+	
+	
+	
+	h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h3.western { font-weight: bold; font-size: 14pt; font-family: "Liberation Serif", serif }h3.cjk { font-weight: bold; font-size: 14pt; font-family: "Noto Serif CJK SC" }h3.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 14pt }pre { background: transparent }pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }blockquote { margin-right: 1cm; margin-left: 1cm; background: transparent }h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h2.western { font-weight: bold; font-size: 18pt; font-family: "Liberation Serif", serif }h2.cjk { font-weight: bold; font-size: 18pt; font-family: "Noto Serif CJK SC" }h2.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 18pt }h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h1.western { font-weight: bold; font-size: 24pt; font-family: "Liberation Serif", serif }h1.cjk { font-weight: bold; font-size: 24pt; font-family: "Noto Serif CJK SC" }h1.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 24pt }p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }em { font-style: italic }code.western { font-family: "Liberation Mono", monospace }code.cjk { font-family: "Noto Sans Mono CJK SC", monospace }code.ctl { font-family: "Liberation Mono", monospace }strong { font-weight: bold }
+
+
+
+2. RESOURCE SUFFICIENCY — FORMAL DEFINITION
+
+
+Plain definition
+
+
+An entity is sufficient if it can survive,
+function, and participate in society without imposing
+disproportionate cost on others.
+
+
+Key constraints:
+
+
+Sufficiency ≠ comfort
+Sufficiency ≠ equality
+Sufficiency is contextual
+Sufficiency is non-negotiable
+
+
+Above sufficiency → freedom
+
+Below sufficiency → automatic
+system response
+
+
+
+
+Core rule (non-negotiable)
+
+
+No entity may remain below sufficiency while
+surplus exists elsewhere.
+
+
+This is the mathematical justification for:
+
+
+Basic income
+Redistribution
+Forced provisioning
+Anti-hoarding
+
+
+No moral framing needed.
+
+
+
+
+3. CANONICAL RESOURCE SET
+
+
+We define a minimal, complete set of resources.
+Anything else is derivative.
+
+
+Each entity e has a resource vector:
+
+
+R(e) = [F, S, E, H, A, C]
+
+Where:
+
+
+
+
+F — Food & Nutrition
+
+
+Calories + nutritional adequacy
+
+
+Failure → rapid physical harm
+
+This has the steepest
+penalty curve
+
+
+
+
+S — Shelter & Physical Safety
+
+
+Protection from environment and violence
+
+
+Includes:
+
+
+Housing
+Temperature regulation
+Physical security
+
+
+
+
+E — Energy & Utilities
+
+
+Ability to cook, heat, cool, communicate
+
+
+This is required for:
+
+
+Modern survival
+Participation
+Opportunity access
+
+
+
+
+H — Healthcare Access
+
+
+Preventive + emergency
+
+
+Measured as access, not usage
+
+
+
+
+A — Autonomy & Mobility
+
+
+Ability to move, choose, and act
+
+
+Includes:
+
+
+Physical mobility
+Legal autonomy
+Freedom from coercion
+
+
+
+
+C — Cognitive & Social Access
+
+
+Ability to:
+
+
+Learn
+Communicate
+Participate meaningfully
+
+
+This prevents:
+
+
+Silent exclusion
+Technological underclass
+
+
+
+
+4. SUFFICIENCY THRESHOLDS (THE IMPORTANT PART)
+
+
+Each resource has:
+
+
+A hard minimum
+A soft sufficiency band
+A surplus region
+
+
+Let resource r have value x.
+
+
+Sufficiency function
+
+
+S_r(x) =
+    0.0   if x < r_min
+    (x - r_min) / (r_suff - r_min)   if r_min ≤ x < r_suff
+    1.0   if x ≥ r_suff
+
+Where:
+
+
+r_min = survival floor
+r_suff = participation threshold
+
+
+Below r_min → emergency
+
+Between
+→ partial harm
+
+Above → no sufficiency harm
+
+
+
+
+Why this matters
+
+
+This makes deprivation non-linear:
+
+
+Losing your second house ≈ no harm
+Losing your only shelter = massive harm
+
+
+Markets don’t do this. Fair systems must.
+
+
+
+
+5. RESOURCE HARM FUNCTION (CONNECTING TO HARM
+MODEL)
+
+
+Recall:
+
+
+Resource Harm = Hᵣ
+
+
+We define:
+
+
+Hᵣ(e) = 1 - min(S_r(e)) across all r
+
+Meaning:
+
+
+The worst resource deficiency dominates
+You don’t average starvation with surplus internet
+
+
+This prevents masking harm with abundance elsewhere.
+
+
+
+
+6. BASIC INCOME FALLS OUT AUTOMATICALLY
+
+
+Basic income is not ideological — it’s a control
+signal.
+
+
+For each entity:
+
+
+RequiredTransfer = Σ max(0, r_suff - r_current)
+
+Paid in:
+
+
+Currency
+Resources
+Services
+Or access
+
+
+Whichever reduces harm most efficiently.
+
+
+
+
+7. HOARDING IS DETECTABLE, NOT DEBATED
+
+
+Define surplus:
+
+
+Surplus_r(e) = max(0, r_current - r_suff)
+
+Define system insufficiency:
+
+
+TotalDeficit_r = Σ max(0, r_suff - r_current)
+
+If:
+
+
+Σ Surplus_r > TotalDeficit_r
+
+and insufficiency exists → redistribution triggers.
+
+
+No moral judgment. Just math.
+
+
+
+
+8. CODE — RESOURCE SUFFICIENCY MODEL
+
+
+Resource definition
+
+
+@dataclass
+class ResourceThreshold:
+    minimum: float
+    sufficient: float
+
+
+
+
+Sufficiency calculation
+
+
+def sufficiency_level(value: float, threshold: ResourceThreshold) -> float:
+    if value < threshold.minimum:
+        return 0.0
+    if value >= threshold.sufficient:
+        return 1.0
+    return (value - threshold.minimum) / (threshold.sufficient - threshold.minimum)
+
+
+
+
+Resource Harm (Hᵣ)
+
+
+def resource_harm(resources: dict, thresholds: dict) -> float:
+    sufficiencies = [
+        sufficiency_level(resources[r], thresholds[r])
+        for r in resources
+    ]
+    return 1.0 - min(sufficiencies)
+
+
+
+
+Basic Income / Transfer Requirement
+
+
+def required_transfer(resources: dict, thresholds: dict) -> float:
+    return sum(
+        max(0, thresholds[r].sufficient - resources[r])
+        for r in resources
+    )
+
+
+
+
+9. WHY THIS MODEL IS HARD TO ABUSE
+
+
+You can’t fake hunger long-term
+You can’t justify hoarding mathematically
+You can’t argue ideology — only thresholds
+Edge cases become visible, not hidden
+
+
+Most importantly:
+
+
+No one debates whether someone “deserves” to
+survive.
+
+
+The system never asks.
+
+
+
+
+
+
+
+
