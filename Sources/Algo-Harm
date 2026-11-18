@@ -1,0 +1,406 @@
+
+
+
+	
+	
+	
+	h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h3.western { font-weight: bold; font-size: 14pt; font-family: "Liberation Serif", serif }h3.cjk { font-weight: bold; font-size: 14pt; font-family: "Noto Serif CJK SC" }h3.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 14pt }h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h2.western { font-weight: bold; font-size: 18pt; font-family: "Liberation Serif", serif }h2.cjk { font-weight: bold; font-size: 18pt; font-family: "Noto Serif CJK SC" }h2.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 18pt }pre { background: transparent }pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }blockquote { margin-right: 1cm; margin-left: 1cm; background: transparent }h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h1.western { font-weight: bold; font-size: 24pt; font-family: "Liberation Serif", serif }h1.cjk { font-weight: bold; font-size: 24pt; font-family: "Noto Serif CJK SC" }h1.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 24pt }p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }code.western { font-family: "Liberation Mono", monospace }code.cjk { font-family: "Noto Sans Mono CJK SC", monospace }code.ctl { font-family: "Liberation Mono", monospace }em { font-style: italic }strong { font-weight: bold }
+
+
+
+1. WHAT “HARM” MEANS (STRICTLY)
+
+
+Harm is any measurable reduction in an entity’s
+ability to survive, function, or exist without imposing
+disproportionate cost on others, now or in the future.
+
+
+Key properties:
+
+
+Outcome-based (not intent-based)
+Applies to all living entities
+Includes inaction
+Includes system-level effects
+Time-aware
+
+
+Harm is not:
+
+
+Offense
+Discomfort alone
+Moral disagreement
+Loss of relative status
+
+
+
+
+2. HARM CATEGORIES (CANONICAL SET)
+
+
+Harm must be decomposed or it becomes fuzzy.
+
+We define six
+orthogonal harm dimensions.
+
+
+Let each entity e have a harm vector:
+
+
+H(e) = [H_p, H_m, H_r, H_o, H_s, H_t]
+
+Where:
+
+
+
+
+Hₚ — Physical Harm
+
+
+Reduction in bodily integrity or survival probability.
+
+
+Examples:
+
+
+Injury
+Illness
+Death
+Environmental toxicity
+
+
+Range:
+
+
+0.0 = no physical harm
+1.0 = certain death
+
+
+
+
+Hₘ — Mental / Cognitive Harm
+
+
+Reduction in psychological functioning or autonomy.
+
+
+Examples:
+
+
+Trauma
+Severe stress
+Forced isolation
+Cognitive degradation
+
+
+Does NOT include:
+
+
+Mere disagreement
+Hurt feelings without functional impairment
+
+
+
+
+Hᵣ — Resource Harm
+
+
+Reduction below sufficiency thresholds.
+
+
+Examples:
+
+
+Hunger
+Homelessness
+Energy deprivation
+Healthcare denial
+
+
+This is binary-weighted near sufficiency:
+
+
+Falling below minimum sharply increases harm
+
+
+
+
+Hₒ — Opportunity Harm
+
+
+Reduction in access to:
+
+
+Education
+Tools
+Meaningful participation
+Creative expression
+
+
+Important:
+
+
+This is relative to capability, not equality
+Losing opportunity ≠ failing to capitalize on it
+
+
+
+
+Hₛ — Systemic Harm
+
+
+Increase in instability or risk imposed on others.
+
+
+Examples:
+
+
+Hoarding
+Infrastructure sabotage
+Disinformation with reach
+Ecological damage
+
+
+This is where individual actions become collective
+harm.
+
+
+
+
+Hₜ — Temporal Harm
+
+
+Future harm discounted improperly.
+
+
+Examples:
+
+
+Climate damage
+Resource depletion
+Long-term social decay
+
+
+This ensures:
+
+
+The present cannot steal from the future unfairly.
+
+
+
+
+3. AGGREGATING HARM (THE CORE FUNCTION)
+
+
+Harm is not additive by default.
+
+Some harms
+dominate others.
+
+
+Weighted Harm Function
+
+
+For entity e:
+
+
+TotalHarm(e) = Σ w_i * H_i(e)
+
+Where weights satisfy:
+
+
+w_p + w_m + w_r + w_o + w_s + w_t = 1
+
+Example baseline (tunable, auditable):
+
+
+w_p = 0.30   # physical
+w_m = 0.15   # mental
+w_r = 0.20   # resources
+w_o = 0.10   # opportunity
+w_s = 0.15   # systemic
+w_t = 0.10   # temporal
+
+
+
+
+Critical Constraint: Harm Floors
+
+
+Some harms override trade-offs.
+
+
+If H_p > 0.7 or H_r > 0.8:
+    action is presumptively unfair
+
+This prevents:
+
+
+Sacrificing lives for efficiency
+Allowing deprivation to persist for abstract gains
+
+
+
+
+4. PREVENTABLE HARM (ACTION VS INACTION)
+
+
+An entity causes harm through inaction iff:
+
+
+PreventableHarm = HarmPrevented - CostOfAction
+
+If:
+
+
+PreventableHarm > 0
+
+Then inaction counts as harm.
+
+
+This avoids:
+
+
+Infinite moral duty
+Unrealistic expectations
+Weaponized guilt
+
+
+
+
+5. POPULATION-LEVEL HARM
+
+
+System fairness is based on distribution, not
+averages.
+
+
+Population Harm
+
+
+PopulationHarm = Σ TotalHarm(e_i)
+
+Harm Inequality (Variance)
+
+
+HarmVariance = Var(TotalHarm(e))
+
+Fair systems minimize:
+
+
+Total harm
+Harm variance
+
+
+Random suffering is worse than uneven but justified suffering.
+
+
+
+
+6. CODE — CANONICAL HARM MODEL
+
+
+Here’s a clean, extensible base.
+
+
+from dataclasses import dataclass
+
+@dataclass
+class HarmVector:
+    physical: float      # H_p
+    mental: float        # H_m
+    resource: float      # H_r
+    opportunity: float   # H_o
+    systemic: float      # H_s
+    temporal: float      # H_t
+
+WEIGHTS = {
+    "physical": 0.30,
+    "mental": 0.15,
+    "resource": 0.20,
+    "opportunity": 0.10,
+    "systemic": 0.15,
+    "temporal": 0.10
+}
+
+def total_harm(h: HarmVector) -> float:
+    return (
+        h.physical * WEIGHTS["physical"] +
+        h.mental * WEIGHTS["mental"] +
+        h.resource * WEIGHTS["resource"] +
+        h.opportunity * WEIGHTS["opportunity"] +
+        h.systemic * WEIGHTS["systemic"] +
+        h.temporal * WEIGHTS["temporal"]
+    )
+
+
+
+
+Harm Floor Enforcement
+
+
+def violates_harm_floor(h: HarmVector) -> bool:
+    return h.physical > 0.7 or h.resource > 0.8
+
+
+
+
+Preventable Harm Calculation
+
+
+def preventable_harm(harm_prevented: float, cost_of_action: float) -> bool:
+    return harm_prevented - cost_of_action > 0
+
+
+
+
+7. WHY THIS WORKS (CRITICALLY)
+
+
+This model:
+
+
+Avoids moral language
+Makes harm comparable but not flattenable
+Allows trade-offs without cruelty
+Protects the vulnerable by design
+Scales from individuals → planet
+Can be audited and simulated
+
+
+Most importantly:
+
+
+No one gets to redefine harm emotionally or
+politically.
+
+
+
+
+NEXT MODULE OPTIONS (LOGICAL ORDER)
+
+
+From here, the clean progression is:
+
+
+2️⃣ Resource Sufficiency thresholds (food,
+shelter, energy)
+
+3️⃣ Justice risk model using harm
+vectors
+
+4️⃣ Contribution Index (positive
+harm reduction)
+
+5️⃣ Simulation of a
+100-entity society
+
+
+
+
+
+
+
+
