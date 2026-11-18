@@ -1,0 +1,389 @@
+
+
+
+	
+	
+	
+	pre { background: transparent }pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h3.western { font-weight: bold; font-size: 14pt; font-family: "Liberation Serif", serif }h3.cjk { font-weight: bold; font-size: 14pt; font-family: "Noto Serif CJK SC" }h3.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 14pt }blockquote { margin-right: 1cm; margin-left: 1cm; background: transparent }h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h2.western { font-weight: bold; font-size: 18pt; font-family: "Liberation Serif", serif }h2.cjk { font-weight: bold; font-size: 18pt; font-family: "Noto Serif CJK SC" }h2.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 18pt }p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }code.western { font-family: "Liberation Mono", monospace }code.cjk { font-family: "Noto Sans Mono CJK SC", monospace }code.ctl { font-family: "Liberation Mono", monospace }em { font-style: italic }strong { font-weight: bold }
+
+
+
+
+
+1. Plain-Language Definition
+
+
+Fairness is the minimization of preventable harm
+and unjustified imbalance across all living entities, over time.
+
+
+Key points baked in:
+
+
+It’s about outcomes, not intentions
+It applies universally, not just to humans
+It’s evaluated over time, not
+	moment-to-moment
+Imbalance is allowed only when justified
+
+
+Fair ≠ equal
+
+Fair ≠ free
+
+Fair ≠ moral
+
+Fair =
+defensible distribution of burden, benefit, and risk
+
+
+
+
+2. Formal Definition (System-Level)
+
+
+At a system level:
+
+
+A state is fair if no entity experiences
+disproportionate harm, deprivation, or loss of agency that cannot be
+justified by a corresponding reduction in overall harm or increase in
+long-term stability.
+
+
+In short:
+
+
+If someone is worse off, there must be a reason
+That reason must:
+
+	
+Reduce greater harm
+Improve long-term outcomes
+Be the least harmful alternative
+
+
+
+
+
+
+3. What Fairness Is Actually Measured From
+
+
+Fairness is not one number.
+
+It’s a composite
+function made of several indices.
+
+
+Core Fairness Function (Conceptual)
+
+
+Fairness = f(
+  Harm Distribution,
+  Resource Sufficiency,
+  Power Balance,
+  Opportunity Access,
+  Stability Impact,
+  Time-Weighted Effects
+)
+
+Let’s break these down.
+
+
+
+
+4. Core Components of Fairness
+
+
+A. Harm Distribution Index (HDI)
+
+
+Measures:
+
+
+Physical harm
+Psychological harm
+Environmental harm
+Systemic harm
+
+
+Fairness rule:
+
+
+Harm should be minimized and evenly
+distributed unless unevenness reduces total harm.
+
+
+Example:
+
+
+Unequal restrictions during a crisis are fair if
+	they reduce more total harm
+Random suffering is always unfair
+
+
+
+
+B. Resource Sufficiency Index (RSI)
+
+
+Measures:
+
+
+Access to food, shelter, energy, healthcare
+Not abundance — sufficiency
+
+
+Fairness rule:
+
+
+No entity may fall below sufficiency while surplus exists
+elsewhere.
+
+
+This justifies:
+
+
+Basic income
+Redistribution
+Anti-hoarding
+
+
+It does not require equality above the sufficiency
+threshold.
+
+
+
+
+C. Power Imbalance Index (PII)
+
+
+Measures accumulation of:
+
+
+Wealth
+Influence
+Information control
+Decision leverage
+
+
+Fairness rule:
+
+
+Power concentration must continuously justify itself
+through present benefit.
+
+
+If justification fails → decay triggers automatically.
+
+
+This is how fairness prevents domination without
+banning success.
+
+
+
+
+D. Opportunity Access Index (OAI)
+
+
+Measures access to:
+
+
+Education
+Creative tools
+Meaningful work
+Participation in society
+
+
+Fairness rule:
+
+
+Opportunity should be as evenly distributed as possible,
+even if outcomes are not.
+
+
+This is why survival is decoupled from labor.
+
+
+
+
+E. Stability Contribution Index (SCI)
+
+
+Measures:
+
+
+Whether actions increase or reduce systemic stability
+Long-term vs short-term effects
+Spillover harm
+
+
+Fairness rule:
+
+
+Actions that undermine shared stability impose unfair
+risk on others.
+
+
+This allows fairness to act against:
+
+
+Disinformation
+Resource manipulation
+Reckless behavior
+
+
+Without moral judgment.
+
+
+
+
+F. Time-Weighted Fairness (TWF)
+
+
+This is crucial.
+
+
+Fairness is evaluated across:
+
+
+Present population
+Future population
+Non-human life
+System longevity
+
+
+Fairness rule:
+
+
+Short-term benefit does not justify long-term harm.
+
+
+This is where climate, automation, and research fit naturally.
+
+
+
+
+5. Individual Fairness Score (IFS)
+
+
+Each individual has a dynamic fairness footprint,
+not a moral score.
+
+
+It reflects:
+
+
+Harm caused vs harm prevented
+Resources consumed vs justified
+Power accumulated vs decayed
+Contribution vs extraction
+
+
+Important:
+
+
+It decays over time
+It is context-aware
+It is never permanent
+
+
+This score influences:
+
+
+Resource variation
+Access priority
+Restrictions when necessary
+
+
+It does not determine worth.
+
+
+
+
+6. What Fairness Explicitly Is Not
+
+
+Fairness is not:
+
+
+Equality of outcome
+Reward for effort alone
+Popular approval
+Moral virtue
+Emotional satisfaction
+
+
+A fair outcome can feel unfair to an individual.
+
+That does
+not invalidate it.
+
+
+
+
+7. Preventing Algorithmic Tyranny
+
+
+Three safeguards keep fairness from becoming oppression:
+
+
+1. Least-Harm Constraint
+
+
+Every decision must be the least harmful viable option.
+
+
+
+
+2. Justification Requirement
+
+
+Any imbalance must produce:
+
+
+Measurable harm reduction or
+Measurable stability gain
+
+
+If not → reversed.
+
+
+
+
+3. Decay and Challenge
+
+
+All fairness models:
+
+
+Expire
+Are challenged by alternatives
+Are replaced if outcomes worsen
+
+
+Fairness is measured, not declared.
+
+
+
+
+8. One-Sentence Definition (Manifesto-Ready)
+
+
+If you want a single line to use publicly:
+
+
+Fairness is a system where no one suffers
+needlessly, no one accumulates unjustified power, and all imbalances
+must continuously prove they reduce greater harm.
+
+
+
+
+
+
+
+
+
+
