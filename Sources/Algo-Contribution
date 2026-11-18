@@ -1,0 +1,293 @@
+
+
+
+	
+	
+	
+	h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h3.western { font-weight: bold; font-size: 14pt; font-family: "Liberation Serif", serif }h3.cjk { font-weight: bold; font-size: 14pt; font-family: "Noto Serif CJK SC" }h3.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 14pt }pre { background: transparent }pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }th p { orphans: 0; text-align: center; widows: 0; font-weight: bold; background: transparent }td p { widows: 0; orphans: 0; background: transparent }blockquote { margin-right: 1cm; margin-left: 1cm; background: transparent }h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h2.western { font-weight: bold; font-size: 18pt; font-family: "Liberation Serif", serif }h2.cjk { font-weight: bold; font-size: 18pt; font-family: "Noto Serif CJK SC" }h2.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 18pt }h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h1.western { font-weight: bold; font-size: 24pt; font-family: "Liberation Serif", serif }h1.cjk { font-weight: bold; font-size: 24pt; font-family: "Noto Serif CJK SC" }h1.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 24pt }p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }code.western { font-family: "Liberation Mono", monospace }code.cjk { font-family: "Noto Sans Mono CJK SC", monospace }code.ctl { font-family: "Liberation Mono", monospace }strong { font-weight: bold }
+
+
+
+4. CONTRIBUTION INDEX — FORMAL DEFINITION
+
+
+Core Principle
+
+
+Contribution is the measurable reduction of harm,
+provision of sufficiency, or improvement of systemic stability over
+time, per entity.
+
+
+Key points:
+
+
+Positive impact only
+Quantified, not judged
+Dynamic and decaying over time
+Can be tied to variable income, influence, and access
+
+
+
+
+1. WHAT COUNTS AS CONTRIBUTION
+
+
+We divide contributions into four categories,
+aligned with harm and resource systems:
+
+
+	
+	
+	
+	
+		
+			Category
+
+			
+			Definition
+
+			
+			Example
+
+			
+		
+	
+	
+		
+			Harm
+				Reduction (Cₕ)
+
+			
+			Preventing
+				or mitigating harm
+
+			
+			Medical
+				care, safety improvements
+
+			
+		
+		
+			Resource
+				Distribution (Cᵣ)
+
+			
+			Ensuring
+				sufficiency across entities
+
+			
+			Transporting
+				food, redistributing surplus
+
+			
+		
+		
+			Stability
+				Improvement (Cₛ)
+
+			
+			Reducing
+				systemic instability
+
+			
+			Information
+				verification, infrastructure maintenance
+
+			
+		
+		
+			Knowledge
+				& Foresight (C𝑓)
+
+			
+			Improving
+				future outcomes
+
+			
+			Research,
+				innovation, disaster planning
+
+			
+		
+	
+
+
+Optional: Each category can be weighted according to societal
+priorities.
+
+
+
+
+2. MEASURABLE CONTRIBUTION
+
+
+Each action a performed by an entity e produces positive
+effect:
+
+
+Contribution(a, e) = Σ (w_i * ΔMetric_i)
+
+Where:
+
+
+wi​ = weight for metric i
+ΔMetrici​ = measurable improvement (reduction in harm,
+	increased sufficiency, increased stability, etc.)
+
+
+Example:
+
+
+Transporting 50 food units to a deficient area → Cᵣ = 0.8
+Research discovering renewable energy solution → C𝑓 =
+	1.2
+
+
+
+
+3. CONTRIBUTION INDEX VECTOR
+
+
+Each entity has a vector:
+
+
+CI(e) = [Cₕ, Cᵣ, Cₛ, C𝑓]
+
+Aggregated Contribution Score
+
+
+CI_total(e) = Σ (w_i * C_i)
+
+
+Default weights can prioritize survival over research if the
+	system is stressed.
+CI_total is never permanent — it decays if
+	the entity stops contributing.
+
+
+
+
+4. TEMPORAL DECAY
+
+
+Contribution decays to prevent hoarding of influence and rewards:
+
+
+CI_total(t+1) = CI_total(t) * (1 - decay_rate)
+
+
+decay_rate could be 1–5% per
+	time unit
+Ensures active participation is rewarded
+Prevents accumulation beyond current societal benefit
+
+
+
+
+5. CONNECTION TO FAIRNESS
+
+
+Contribution interacts with fairness as follows:
+
+
+Higher CI → access to small resource variations above
+	sufficiency
+Contribution cannot compensate for preventable harm
+CI influences social rewards, not survival
+
+
+ResourceBonus(e) = f(CI_total(e)) 
+
+
+Example: better housing options, creative tools, research
+	funding
+Optional: matching contribution type with systemic need
+
+
+
+
+6. CODE — CONTRIBUTION INDEX
+
+
+from dataclasses import dataclass, field
+
+@dataclass
+class Contribution:
+    harm_reduction: float = 0.0
+    resource_distribution: float = 0.0
+    stability_improvement: float = 0.0
+    foresight: float = 0.0
+    decay_rate: float = 0.02  # 2% per cycle
+
+    def total_score(self, weights=None):
+        if weights is None:
+            weights = {
+                "harm_reduction": 0.4,
+                "resource_distribution": 0.3,
+                "stability_improvement": 0.2,
+                "foresight": 0.1
+            }
+        return (
+            self.harm_reduction * weights["harm_reduction"] +
+            self.resource_distribution * weights["resource_distribution"] +
+            self.stability_improvement * weights["stability_improvement"] +
+            self.foresight * weights["foresight"]
+        )
+
+    def decay(self):
+        self.harm_reduction *= (1 - self.decay_rate)
+        self.resource_distribution *= (1 - self.decay_rate)
+        self.stability_improvement *= (1 - self.decay_rate)
+        self.foresight *= (1 - self.decay_rate)
+
+
+
+
+7. DYNAMIC INTEGRATION EXAMPLE
+
+
+def apply_contribution(entity, contribution: Contribution, resources: dict):
+    # Base sufficiency is guaranteed
+    bonus = contribution.total_score() * 0.05  # small % variation above sufficiency
+    for r in resources:
+        resources[r] += bonus
+
+
+Active contributors gain small, fair benefits
+Inactivity → decay → benefits removed
+Prevents long-term inequality
+
+
+
+
+8. SAFEGUARDS
+
+
+Cannot replace sufficiency: No contribution
+	→ no harm prevention, but survival guaranteed
+Cannot overrule justice: Harmful actions
+	reduce CI immediately
+Transparent: Contributions are auditable,
+	measurable, and reversible
+
+
+
+
+Summary
+
+
+Contribution is positive reinforcement, not
+	coercion
+Dynamic, decaying, and fully measurable
+Connects to resource allocation, social
+	rewards, and influence, but not survival
+Keeps the system fair, active, and future-oriented
+
+
+
+
+
+
+
+
