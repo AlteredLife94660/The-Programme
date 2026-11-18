@@ -1,0 +1,473 @@
+
+
+
+	
+	
+	
+	h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h3.western { font-weight: bold; font-size: 14pt; font-family: "Liberation Serif", serif }h3.cjk { font-weight: bold; font-size: 14pt; font-family: "Noto Serif CJK SC" }h3.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 14pt }pre { background: transparent }pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }blockquote { margin-right: 1cm; margin-left: 1cm; background: transparent }h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h2.western { font-weight: bold; font-size: 18pt; font-family: "Liberation Serif", serif }h2.cjk { font-weight: bold; font-size: 18pt; font-family: "Noto Serif CJK SC" }h2.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 18pt }h1 { margin-bottom: 0.21cm; background: transparent; page-break-after: avoid }h1.western { font-weight: bold; font-size: 24pt; font-family: "Liberation Serif", serif }h1.cjk { font-weight: bold; font-size: 24pt; font-family: "Noto Serif CJK SC" }h1.ctl { font-weight: bold; font-family: "Lohit Devanagari"; font-size: 24pt }p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }code.western { font-family: "Liberation Mono", monospace }code.cjk { font-family: "Noto Sans Mono CJK SC", monospace }code.ctl { font-family: "Liberation Mono", monospace }em { font-style: italic }strong { font-weight: bold }
+
+
+
+3. JUSTICE AS RISK MANAGEMENT
+
+
+Core Principle
+
+
+Justice exists solely to reduce the probability
+and magnitude of future harm while preserving systemic stability.
+
+
+Everything else is noise.
+
+
+So justice decisions answer only one question:
+
+
+What intervention minimizes expected future harm at
+the lowest total cost?
+
+
+
+
+1. WHAT COUNTS AS A “JUSTICE EVENT”
+
+
+A justice event is triggered when any of the
+following cross thresholds:
+
+
+Acute harm
+Chronic harm accumulation
+High recurrence probability
+Systemic instability contribution
+
+
+There is no separate concept of “crime”.
+
+
+
+
+2. ENTITY STATE (WHAT JUSTICE SEES)
+
+
+Each entity e has a justice state vector:
+
+
+J(e) = {
+  harm_history,
+  resource_state,
+  recurrence_probability,
+  learning_capacity,
+  systemic_impact,
+  constraint_cost
+}
+
+Let’s define each precisely.
+
+
+
+
+A. Harm History
+
+
+From your harm model:
+
+
+H_total(e, t) = Σ TotalHarm(e) over time window t
+
+Recent harm is weighted more heavily than distant harm.
+
+
+
+
+B. Resource State
+
+
+Directly from sufficiency model:
+
+
+Below sufficiency increases risk
+Persistent deprivation reduces learning capacity
+Scarcity-driven harm is treated differently from
+	surplus-driven harm
+
+
+This avoids criminalizing poverty by construction.
+
+
+
+
+C. Recurrence Probability (R)
+
+
+This is not a moral judgment. It’s a predictive
+estimate.
+
+
+R(e) ∈ [0,1]
+
+Derived from:
+
+
+Past behavior patterns
+Context similarity
+Response to prior interventions
+
+
+Importantly:
+
+
+First-time harm ≠ high risk
+Repeated, willful harm escalates quickly
+
+
+
+
+D. Learning Capacity (L)
+
+
+L(e) ∈ [0,1]
+
+Measures likelihood that the entity adapts after intervention.
+
+
+Inputs:
+
+
+Prior corrections
+Cognitive capacity
+Resource sufficiency
+Environmental stability
+
+
+Low learning capacity does not imply blame — it
+affects intervention choice.
+
+
+
+
+E. Systemic Impact (S)
+
+
+Measures spillover risk:
+
+
+S(e) ∈ [0,1]
+
+Examples:
+
+
+Violence with imitation risk
+Hoarding in scarce systems
+Disinformation with reach
+Infrastructure interference
+
+
+Low individual harm can still be high systemic risk.
+
+
+
+
+F. Constraint Cost (C)
+
+
+The cost to others of intervening.
+
+
+Includes:
+
+
+Resource usage
+Rights restrictions
+Stability impact
+Opportunity loss
+
+
+This prevents over-policing.
+
+
+
+
+3. EXPECTED FUTURE HARM (THE CORE METRIC)
+
+
+Justice operates on expected harm, not past harm.
+
+
+Expected Harm Function
+
+
+ExpectedHarm(e) =
+    R(e) × (
+        α * H_recent(e)
+      + β * S(e)
+      + γ * ResourceInstability(e)
+    )
+
+Where:
+
+
+α, β, γ are tunable weights
+ResourceInstability spikes when
+	below sufficiency
+
+
+
+
+4. INTERVENTION SET (ORDERED, NOT MORAL)
+
+
+We define a minimal intervention ladder.
+
+
+I = [
+  observe,
+  inform,
+  assist,
+  restrict,
+  relocate,
+  isolate
+]
+
+Each intervention has:
+
+
+Effectiveness E_i (harm reduction)
+Cost C_i (constraint cost)
+
+
+
+
+5. INTERVENTION SELECTION RULE
+
+
+Choose the intervention that minimizes:
+
+
+NetCost = ExpectedFutureHarm_after + C_i
+
+Subject to:
+
+
+Least-harm constraint
+Harm floor rules
+Axiom validation
+
+
+No discretion. No vengeance.
+
+
+
+
+6. INTERVENTION DEFINITIONS
+
+
+1. Observe
+
+
+Used when:
+
+
+Harm is low
+Risk is low
+Learning capacity is high
+
+
+No action is itself an action.
+
+
+
+
+2. Inform
+
+
+Used when:
+
+
+Harm is accidental
+Entity is unaware of impact
+
+
+This includes:
+
+
+Feedback
+Education
+Transparency
+
+
+
+
+3. Assist
+
+
+Used when:
+
+
+Harm is driven by insufficiency
+Capacity exists but resources do not
+
+
+Examples:
+
+
+Income increase
+Healthcare
+Relocation assistance
+Mediation
+
+
+This replaces punishment for scarcity-driven harm.
+
+
+
+
+4. Restrict (Temporary)
+
+
+Used when:
+
+
+Recurrence risk is moderate
+Learning capacity exists
+
+
+Examples:
+
+
+Access limits
+Activity constraints
+Cooling-off periods
+
+
+Always time-bounded.
+
+
+
+
+5. Relocate
+
+
+Used when:
+
+
+Environment is the risk driver
+Harm clusters geographically or socially
+
+
+This is protective, not punitive.
+
+
+
+
+6. Isolate (Last Resort)
+
+
+Used only when:
+
+
+Recurrence risk is extreme
+Learning capacity is low
+Systemic harm is high
+
+
+Constraints:
+
+
+Minimal duration
+Continuous review
+Harm-reduction conditions only
+
+
+Isolation is failure containment, not retribution.
+
+
+
+
+7. CODE — JUSTICE ENGINE (CANONICAL)
+
+
+Entity Justice State
+
+
+@dataclass
+class JusticeState:
+    recent_harm: float
+    recurrence_prob: float
+    learning_capacity: float
+    systemic_impact: float
+    resource_instability: float
+
+
+
+
+Expected Harm
+
+
+def expected_future_harm(js: JusticeState,
+                         alpha=0.4, beta=0.4, gamma=0.2):
+    return js.recurrence_prob * (
+        alpha * js.recent_harm +
+        beta * js.systemic_impact +
+        gamma * js.resource_instability
+    )
+
+
+
+
+Intervention Model
+
+
+@dataclass
+class Intervention:
+    name: str
+    effectiveness: float   # expected harm reduction
+    cost: float            # constraint cost
+
+
+
+
+Intervention Selection
+
+
+def choose_intervention(js: JusticeState, interventions: list):
+    base_harm = expected_future_harm(js)
+    best = None
+    best_score = float("inf")
+
+    for i in interventions:
+        post_harm = base_harm * (1 - i.effectiveness)
+        net_cost = post_harm + i.cost
+
+        if net_cost < best_score:
+            best_score = net_cost
+            best = i
+
+    return best
+
+
+
+
+8. WHY THIS MODEL DOESN’T DRIFT INTO TYRANNY
+
+
+No crimes → only risk
+No punishment → only mitigation
+No fixed sentences → continuous review
+No moral labels → only state variables
+No discretion → only optimization
+
+
+Justice becomes boring.
+
+
+That’s a feature.
+
+
+
+
+
+
+
+
